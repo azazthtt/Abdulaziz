@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>تكنوفور - Techno4</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fefefe;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #004aad;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.store-name {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.section {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.product {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #004aad;
+    width: 20%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    box-shadow: 3px 0px 86px 10px rgba(0, 0, 0, 0.59);
+}
+
+.product-info {
+    text-align: center;
+    color: #000000;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-button {
+    margin-top: 10px;
+    background-color: #004aad;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #59626d;
+}
+
+footer {
+    position: fixed;
+    bottom: -50px;
+    width: 100%;
+    background-color: #004aad;
+    color: #fff;
+    padding: 10px 0;
+    transition: bottom 0.3s;
+    margin-top: 100px;
+}
+
+.show-footer {
+    bottom: 0;
+}
+
+.about-section {
+    position: relative;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+.control-button {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.left-button {
+    left: 10px;
+}
+
+.right-button {
+    right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+@media only screen and (max-width: 600px) {
+    .product {
+        width: 90%;
+    }
+
+    .product-button {
+        background-color: #ffffff;
+        color: #004aad;
+    }
+
+    .product-button:hover {
+        background-color: #4a7fc5;
+        color: #fefefe;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .product {
+        width: 50%;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .product {
+        width: 360px;
+    }
+
+    .product-image:hover {
+        background-color: #fefefe80;
+    }
+
+    .product-button {
+        font-size: 14px;
+    }
+
+    .product-button:hover {
+        background-color: #4a7fc5;
+        color: #fefefe;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        /* position: relative; */
+        max-width: 20%;
+        /* max-width: 400px; */
+        margin: 20px auto;
+        left: 650px;
+        border-radius: 25px;
+        box-shadow: 3px 0px 86px 10px rgba(0, 0, 0, 0.59);
+    }
+
+    .product-info {
+        height: 60%;
+    }
+
+    .product-image {
+        margin-bottom: 25px;
+        border-radius: 25px;
+    }
+
+    .product-button {
+        font-size: 16px;
+    }
+
+    .product-button:hover {
+        background-color: #007bffc0;
+    }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #004aad;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4a7fc5;
+    border-radius: 20px;
+}
+
+/* تصميم الفوتر */
+#footer {
+    background-color: #004aad;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: bottom 0.3s;
+}
+
+.credit {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.credit a {
+    color: #7700ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ظهور الفوتر عند التمرير للأسفل */
+.show-footer {
+    bottom: 0;
+}
+
+
+.toast-header{
+    background-color: #004aad;
+    color: #ffffff;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        max-width: 5%;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-info {
+        height: auto;
+    }
+
+    .product-image {
+        margin-bottom: 10px;
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .product-button:hover {
+        background-color: #007bffc0;
+    }
+
+    /* Scrollbar Styles */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #004aad;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #4a7fc5;
+    }
+
+    /* Footer Styles */
+    #footer {
+        background-color: #004aad;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .credit {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .credit a {
+        color: #7700ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* Toast Header Styles */
+    .toast-header {
+        background-color: #004aad;
+        color: #ffffff;
+    }
+}
+
+
+</style>
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="https://cdn.discordapp.com/attachments/1170277766340546560/1170302503624118352/Blue_Business_Technology_Letter_B_Logo.pdf.png?ex=65fea924&is=65ec3424&hm=c0890102a2b08dbab94a714c51c327852c377d3d30558581e60c660bb74e7acd&" alt="Techno4 Logo" class="logo">
+        </a>        
+        <div class="store-name">تكنوفور - Techno4</div>
+    </nav>
+
+    <div class="about-section">
+        <!-- <h2>مرحبًا بك في تكنوفور - Techno4</h2>
+        <p>نحن متجر يقدم أحدث المنتجات التقنية بأسعار معقولة وجودة عالية.</p> -->
+        <img class="about-image" src="https://cdn.discordapp.com/attachments/1170277766340546560/1170622066278531132/White_and_Blue_Modern_Business_Twitter_Header.png?ex=65ffd2c1&is=65ed5dc1&hm=eb752bd464fc732607f3597678903c76297dac9a631b8c1c7a09d0a56d5a7c62&" alt="Store Image">
+        <button class="control-button left-button" onclick="moveImage('left')">‹</button>
+        <button class="control-button right-button" onclick="moveImage('right')">›</button>
+    </div>
+
+    <!-- <div class="product">
+        <div class="product-info">
+            <img class="product-image" src="https://cdn.discordapp.com/attachments/1170277766340546560/1170621319168151622/1.png?ex=6559b50f&is=6547400f&hm=d5370ea1c554075da6cd43de2995231130295593f4d650b9e30e414a9771c039&" alt="Product Image">
+            <button class="product-button" onclick="showPurchaseConfirmation()">شراء</button>
+            <button class="product-button" onclick="showProductInfo()">معلومات</button>
+
+        </div>
+    </div> -->
+
+    <div class="product-card">
+        <img class="product-image" src="https://cdn.discordapp.com/attachments/1170277766340546560/1170621319168151622/1.png?ex=65ffd20f&is=65ed5d0f&hm=da6268d8ab7f79e0c0768731de1b0a341541e8822a8d7f2afebf6e0783ca9d35&" alt="Product Image">
+        <div class="product-info">
+            <h2>مصادر تجارة المنتجات الرقمية</h2>
+            <p class="price" style="font-size: 25px;">SAR 29.99</p>
+            <p class="description" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 28px; color:#004aad; margin-left: 175px;">ماهو المنتج ؟ 
+                <ol style="text-align: right; direction: rtl; color: black; font-size: 21px; font-family: 'Roboto', Arial, sans-serif; list-style-type: circle;">
+                    <li>ملف يحتوي على مواقع توفر المنتجات الرقمية مثل (ويندوز - أوفيس - برامج الحاسوب - أكواد الألعاب الإلكترونية) بسعر الجملة  .</li>
+                </ol>
+                
+            </p>
+            <button class="product-button" onclick="showPurchaseConfirmation()">شراء</button>
+            <button class="product-button" onclick="showProductInfo()" > معلومات اكثر</button>
+        </div>
+    </div>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000"
+        style="position: fixed; top: 20px; right: 20px; background-color: #004aad; color: #fff;">
+        <div class="toast-header">
+            <strong class="mr-auto">مرحبًا بك في تكنوفور - Techno4</strong>
+        </div>
+        <div class="toast-body">
+            نحن متجر يقدم أحدث المنتجات التقنية بأسعار معقولة وجودة عالية.
+        </div>
+    </div>
+    
+    
+
+    <footer id="footer">
+        <!-- &copy; All Rights Reserved for  Techno4 Store. | powered by  o3r store. -->
+        <div class="credit">Made with <span style="color:rgb(255, 0, 0)">❤</span> by <a href="https://o3r.rf.gd/powerdbyo3r.html">o3r store</a></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+    
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            document.getElementById("footer").classList.add('show-footer');
+        } else {
+            document.getElementById("footer").classList.remove('show-footer');
+        }
+    }
+
+    // Your existing code continues here
+
+    window.onscroll = function() {
+        scrollFunction();
+    };
+// Swal.fire({
+//     title: 'مرحبًا بك في تكنوفور - Techno4',
+//     text: 'نحن متجر يقدم أحدث المنتجات التقنية بأسعار معقولة وجودة عالية.',
+//     icon: 'info',
+//     confirmButtonText: 'موافق',
+//     confirmButtonColor: "#004aad",
+// });
+
+$(document).ready(function () {
+            // Show the toast
+            $('.toast').toast('show');
+        });
+
+const images = [
+    "https://cdn.discordapp.com/attachments/1170277766340546560/1170622066278531132/White_and_Blue_Modern_Business_Twitter_Header.png?ex=65ffd2c1&is=65ed5dc1&hm=eb752bd464fc732607f3597678903c76297dac9a631b8c1c7a09d0a56d5a7c62&",
+    "https://cdn.discordapp.com/attachments/1170277766340546560/1170629279411879946/White_and_Blue_Modern_Business_Twitter_Header_1.png?ex=65ffd979&is=65ed6479&hm=53c042332b068211f6dff0752c13c8fa1a45f95c01b06465e6f400c56d548274&",
+    "https://cdn.discordapp.com/attachments/1170277766340546560/1170634771693588490/White_and_Blue_Modern_Business_Twitter_Header.png?ex=65ffde96&is=65ed6996&hm=afef86265c4dcddb4ac4236f9b7d99c9b97ece817eb8835fbd8497ca32b4d287&"
+];
+let currentImageIndex = 0;
+const imageElement = document.querySelector(".about-image");
+
+function changeImage(direction) {
+    if (direction === "right") {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    } else {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    }
+    imageElement.src = images[currentImageIndex];
+}
+
+
+
+function moveImage(direction) {
+    const distance = direction === 'right' ? -100 : 100;
+    imageElement.style.transform = `translateX(${distance}%)`;
+    setTimeout(() => {
+        changeImage(direction);
+        imageElement.style.transform = 'translateX(0)';
+    }, 500);
+
+}
+function showProductInfo() {
+    Swal.fire({
+        html: `
+    <div style="text-align: right;">
+        <br>
+        <br>
+        <p style="font-size: 25px; color: #004aad; font-weight: bold;">ماذا نستفيد من المنتج؟</p>
+        <p stle="font-size:21px; font-weight: bolder;">المنتج يستهدف المبتدئين في عالم التجارة الإلكترونية وأصحاب المتاجر بحيث يستطيعون شراء المنتجات الرقمية من هذه المواقع بسعر الجملة وبيعها في متاجرهم بسعر أعلى.</p>
+        <p style="font-size: 24px; color: #004aad; font-weight: bold;">:ستتعرف في هذا الملف على</p>
+
+        <ul style="text-align: right; direction: rtl;">
+            <li>طرق شراء اشتراكات من شركات منوعة وكبيرة.</li>
+            <li>بيع اشتراكات نتفلكس.</li>
+            <li>بيع اشتراكات يوتيوب بريميوم.</li>
+            <li>بيع اشتراكات برامج الحماية مثل كاسبر وأفاست.</li>
+            <li>بيع برامج المايكروسوفت بجميع أنواعها.</li>
+            <li>بيع برامج ال VPN بجميع أنواعها.</li>
+            <li>بيع الألعاب الخاصة بال PC والاكس بوكس والسوني بسعر الجملة مثل لعبة GTA بأرخص سعر و FC24 وغيرها الكثير من الألعاب.</li>
+            <li>والكثير من البرامج والاشتراكات والمنتجات وجميعها بسعر الجملة.</li>
+        </ul>
+    </div>
+`,
+
+    showConfirmButton: false,
+    showCloseButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'حسناً',
+    }).then((result) => {
+        if (result.isConfirmed) {
+        }
+    });
+}
+function showPurchaseConfirmation() {
+    Swal.fire({
+        title: 'هل أنت متأكد؟',
+        text: 'سيتم توجيهك إلى صفحة الشراء.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'نعم، شراء',
+        cancelButtonText: 'لا',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = './pay.html'; // رابط الشراء هنا
+        }
+    });
+
+    function autoChangeImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        imageElement.src = images[currentImageIndex];
+    }
+    
+    setInterval(autoChangeImage, 5000); 
+    window.devicePixelRatio
+
+}
+</script>
+</body>
+</html>

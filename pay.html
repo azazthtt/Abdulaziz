@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+
+    <title>صفحة الدفع</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fefefe;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #004aad;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 50px;
+        }
+
+        .store-name {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        .section {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #004aad;
+            color: #fff;
+            padding: 10px 0;
+            transition: bottom 0.3s;
+            margin-top: 100px;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .payment-option {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #004aad;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.1);
+            border-color: #4a7fc5;
+        }
+
+        .payment-option-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .credit {
+            text-align: center;
+            color: #fff;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .credit a {
+            text-decoration: none;
+            color: #B721FF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="https://cdn.discordapp.com/attachments/1170277766340546560/1170302503624118352/Blue_Business_Technology_Letter_B_Logo.pdf.png?ex=65588c24&is=65461724&hm=921518a23b79fc321c10afd6b3ec0b4f14de03ec3ee5c2120830dd79446d0468&" alt="Techno4 Logo" class="logo">
+        </a>   
+        <h1 class="store-name">تكنوفور - Techno4</h1>
+    </nav>
+
+    <div class="section">
+        <div class="payment-options">
+            <div class="payment-option" onclick="showStcPayInfo()">
+                <div class="payment-option-title">STC Pay</div>
+                <!-- Add bank transfer form here -->
+            </div>
+            <div class="payment-option" onclick="showBankTransferInfo()">
+                <div class="payment-option-title">تحويل بنكي</div>
+                <!-- Add bank transfer form here -->
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
+        <script>
+            function showStcPayInfo() {
+                Swal.fire({
+                    title: 'معلومات STC Pay',
+                    html: '0554983523 ',
+                    icon: 'info',
+                    confirmButtonText: 'حسناً'
+                })
+            }
+
+            function showBankTransferInfo() {
+                Swal.fire({
+                    title: 'معلومات التحويل البنكي',
+                    html: 'soon',
+                    icon: 'info',
+                    confirmButtonText: 'حسناً'
+                })
+            }
+
+            Swal.fire({
+                title: 'تنبيه',
+                text: '  الرجاء التواصل معنا عبر الواتساب لتسليم المنتج بعد اتمام عملية الدفع.',
+                icon: 'error',
+                confirmButtonText: 'حسناً'
+            });
+        </script>
+    </div>
+
+    <footer>
+        <p class="credit">Made with ❤ by <a href="https://discord.gg/ZH6d3zNHzb">o3r store</a></p>
+    </footer>
+
+</body>
+
+</html>
